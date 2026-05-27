@@ -1,2 +1,309 @@
-# cheeky-crocodile-river-safari
-Cheeky Crocodile Nilwala River Safari Explore the beauty of Nilwala River 🐊 See wild crocodiles, birds &amp; mangrove nature 🌿 Boat safaris | Safe &amp; guided tours 📍 Sri Lanka 📩 Book your adventure today! Matara+94 70 153 5050
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cheeky Crocodile River Safari</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      overflow-x:hidden;
+      color:white;
+      background:black;
+    }
+
+    .slideshow{
+      position:fixed;
+      width:100%;
+      height:100vh;
+      z-index:-2;
+      overflow:hidden;
+    }
+
+    .slideshow img{
+      position:absolute;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      opacity:0;
+      animation:slideShow 18s infinite;
+    }
+
+    .slideshow img:nth-child(1){
+      animation-delay:0s;
+    }
+
+    .slideshow img:nth-child(2){
+      animation-delay:6s;
+    }
+
+    .slideshow img:nth-child(3){
+      animation-delay:12s;
+    }
+
+    @keyframes slideShow{
+      0%{opacity:0;}
+      10%{opacity:1;}
+      30%{opacity:1;}
+      40%{opacity:0;}
+      100%{opacity:0;}
+    }
+
+    .overlay{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,0.55);
+      z-index:-1;
+    }
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:20px;
+    }
+
+    .content{
+      max-width:800px;
+      background:rgba(0,0,0,0.45);
+      padding:40px;
+      border-radius:20px;
+      backdrop-filter:blur(8px);
+    }
+
+    h1{
+      font-size:4rem;
+      margin-bottom:15px;
+      color:#00ff95;
+    }
+
+    p{
+      font-size:1.2rem;
+      line-height:1.7;
+      margin-bottom:20px;
+    }
+
+    .btns{
+      display:flex;
+      gap:15px;
+      justify-content:center;
+      flex-wrap:wrap;
+      margin-top:20px;
+    }
+
+    .btn{
+      padding:15px 30px;
+      border-radius:50px;
+      text-decoration:none;
+      color:white;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    .whatsapp{
+      background:#25D366;
+    }
+
+    .map{
+      background:#ff5722;
+    }
+
+    .btn:hover{
+      transform:scale(1.05);
+    }
+
+    .booking{
+      background:white;
+      color:black;
+      padding:60px 20px;
+    }
+
+    .booking h2{
+      text-align:center;
+      margin-bottom:30px;
+      font-size:2.5rem;
+    }
+
+    form{
+      max-width:700px;
+      margin:auto;
+      display:grid;
+      gap:15px;
+    }
+
+    input, select, textarea{
+      padding:15px;
+      border-radius:10px;
+      border:none;
+      background:#f1f1f1;
+      font-size:1rem;
+    }
+
+    textarea{
+      height:120px;
+      resize:none;
+    }
+
+    button{
+      background:#25D366;
+      color:white;
+      border:none;
+      padding:15px;
+      border-radius:10px;
+      font-size:1.1rem;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    button:hover{
+      background:#1ebd5a;
+    }
+
+    iframe{
+      width:100%;
+      height:400px;
+      border:none;
+      margin-top:40px;
+      border-radius:20px;
+    }
+
+    footer{
+      text-align:center;
+      padding:20px;
+      background:black;
+      color:white;
+    }
+
+    @media(max-width:768px){
+      h1{
+        font-size:2.5rem;
+      }
+
+      .content{
+        padding:25px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Background Slideshow -->
+  <div class="slideshow">
+    <img src="images/photo1.jpg" alt="">
+    <img src="images/photo2.jpg" alt="">
+    <img src="images/photo3.jpg" alt="">
+  </div>
+
+  <div class="overlay"></div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="content">
+      <h1>Cheeky Crocodile River Safari</h1>
+
+      <p>
+        Explore the beautiful Nilwala River in Sri Lanka with our exciting crocodile safari adventures,
+        bird watching tours, river fishing and unforgettable nature experiences.
+      </p>
+
+      <div class="btns">
+        <a class="btn whatsapp"
+           href="https://wa.me/+94701535050"
+           target="_blank">
+           Book on WhatsApp
+        </a>
+
+        <a class="btn map"
+           href="https://maps.app.goo.gl/QCbjW1A6dDykBMqJ7"
+           target="_blank">
+           View Location
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking Section -->
+  <section class="booking">
+
+    <h2>Book Your Safari</h2>
+
+    <form id="bookingForm">
+
+      <input type="text" id="name" placeholder="Your Name" required>
+
+      <input type="text" id="country" placeholder="Country" required>
+
+      <input type="date" id="date" required>
+
+      <input type="number" id="guests" placeholder="Number of Guests" required>
+
+      <select id="package">
+        <option>Morning Safari</option>
+        <option>Sunset Safari</option>
+        <option>Bird Watching Tour</option>
+        <option>Fishing Adventure</option>
+      </select>
+
+      <textarea id="message" placeholder="Additional Message"></textarea>
+
+      <button type="submit">
+        Send Booking via WhatsApp
+      </button>
+
+    </form>
+
+    <iframe
+      src="https://maps.google.com/maps?q=Cheeky%20Crocodile%20River%20Safari&t=&z=13&ie=UTF8&iwloc=&output=embed">
+    </iframe>
+
+  </section>
+
+  <footer>
+    © 2026 Cheeky Crocodile River Safari | Sri Lanka
+  </footer>
+
+  <script>
+    document.getElementById("bookingForm").addEventListener("submit", function(e){
+
+      e.preventDefault();
+
+      let name = document.getElementById("name").value;
+      let country = document.getElementById("country").value;
+      let date = document.getElementById("date").value;
+      let guests = document.getElementById("guests").value;
+      let pack = document.getElementById("package").value;
+      let msg = document.getElementById("message").value;
+
+      let text =
+`🐊 Cheeky Crocodile River Safari Booking
+
+👤 Name: ${name}
+🌍 Country: ${country}
+📅 Date: ${date}
+👥 Guests: ${guests}
+🚤 Package: ${pack}
+
+📝 Message:
+${msg}`;
+
+      let whatsapp =
+`https://wa.me/94701535050?text=${encodeURIComponent(text)}`;
+
+      window.open(whatsapp, "_blank");
+
+    });
+  </script>
+
+</body>
+</html>
